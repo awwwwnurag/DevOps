@@ -7,6 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="container">
+        <h1>Hello World</h1>
+        <p>Welcome to my webpage!</p>
+        <button onclick="alert('Button clicked!')">Click me</button>
+        <hr>
+        <h2>About this page</h2>
+        <p>This is a simple HTML page with CSS styling.</p>
+        <ul>
+            <li>HTML structure</li>
+            <li>CSS styling</li>
+            <li>JavaScript interaction</li>
+        </ul>
+        
+        <h3>Current Time</h3>
+        <p id="time">Loading time...</p>
+        
+        <h3>User Input</h3>
+        <input type="text" id="userInput" placeholder="Enter your name">
+        <button onclick="greetUser()">Greet</button>
+        <p id="greeting"></p>
+        
+        <footer>
+            <p>&copy; 2026 My Webpage. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        function updateTime() {
+            document.getElementById('time').textContent = new Date().toLocaleString();
+        }
+        
+        function greetUser() {
+            const name = document.getElementById('userInput').value;
+            document.getElementById('greeting').textContent = name ? `Hello, ${name}!` : 'Please enter your name';
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
